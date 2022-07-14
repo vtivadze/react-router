@@ -1,4 +1,4 @@
-import { Link, Outlet } from 'react-router-dom';
+import { NavLink, Outlet } from 'react-router-dom';
 
 function App() {
   return (
@@ -10,8 +10,8 @@ function App() {
           paddingBottom: "1 rem",
         }}
       >
-        <Link to="/invoices">Invoices</Link> |{" "}
-        <Link to="/expenses">Expenses</Link>
+        <NavLink className={({isActive}) => isActive ? 'red' : 'inherit'} to="/invoices">Invoices</NavLink> |{" "}
+        <NavLink className={({isActive}) => isActive ? 'red' : 'inherit'} to="/expenses">Expenses</NavLink>
       </nav>
       <Outlet />
     </div>
